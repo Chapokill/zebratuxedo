@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zebratuxedo — this is just our Xperiment</title>
+<meta name="description" content="ZebraTuxedo is a space for ideas, experiments, creativity, and everything in between.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--surface:#fff;--ink:#111;--muted:#6f6f6f;--line:#e4e4e1;--orange:#ff6a00;--green:#0a5a2e;--max:1180px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.zt{color:var(--green)}
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,247,245,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.07)}
+.nav-inner{max-width:var(--max);margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:20px;letter-spacing:-.04em;text-decoration:none;color:var(--green)}
+.nav-links{display:flex;gap:30px;font-size:14px;color:#555}
+.nav-links a{text-decoration:none}.nav-links a:hover{color:#000}
+.nav-cta{background:var(--orange);color:#fff;text-decoration:none;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:600}
+.hero{max-width:var(--max);margin:auto;padding:105px 28px 72px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;padding:8px 13px;border-radius:999px;font-size:12px;color:#555;margin-bottom:28px}
+.dot{width:7px;height:7px;background:var(--orange);border-radius:50%}
+h1{font-family:"Space Grotesk";font-size:clamp(58px,9vw,118px);line-height:.92;letter-spacing:-.075em;max-width:1050px;margin:0 auto}
+.hero p{max-width:620px;margin:28px auto 0;font-size:18px;line-height:1.6;color:#666}
+.hero-actions{display:flex;justify-content:center;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:600;border:1px solid #111}
+.btn-primary{background:#fff;color:#111}
+.btn-secondary{background:var(--orange);border-color:var(--orange);color:#fff}
+.section{max-width:var(--max);margin:auto;padding:125px 28px}
+.section-head{max-width:720px;margin-bottom:55px}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);font-weight:700;margin-bottom:14px}
+h2{font-family:"Space Grotesk";font-size:clamp(40px,5.5vw,70px);line-height:.98;letter-spacing:-.06em;margin:0}h2 em{color:var(--orange);font-style:normal}
+.lead{font-size:20px;line-height:1.6;color:#666;margin-top:22px;max-width:650px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;min-height:260px}
+.card-num{font-size:12px;color:var(--orange);font-weight:700;margin-bottom:70px}
+.card h3{font-family:"Space Grotesk";font-size:24px;margin:0 0 10px;letter-spacing:-.03em}.card h3:before{content:"";display:block;width:24px;height:3px;background:var(--orange);margin-bottom:16px;border-radius:3px}.card p{color:#777;line-height:1.65;margin:0}
+.split{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;align-items:start}
+.copy{color:#5f5f5f;font-size:17px;line-height:1.85}.copy p{margin:0 0 22px}
+.quote{font-family:"Space Grotesk";font-size:clamp(32px,4vw,55px);line-height:1.05;letter-spacing:-.055em;color:#111;margin:0}
+.pill-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:35px}.pill{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 17px;color:#555}.pill:before{content:"→";color:var(--orange);font-weight:700;margin-right:10px}
+.dark{background:#111;color:#fff;max-width:none}.dark-inner{max-width:var(--max);margin:auto;padding:120px 28px}.dark .kicker,.dark .lead{color:#aaa}.dark .quote{color:#fff}
+.contact-box{margin-top:45px;display:flex;justify-content:space-between;align-items:center;gap:30px;background:#fff;color:#111;border-radius:24px;padding:28px 30px}
+.email{font-family:"Space Grotesk";font-size:clamp(20px,3vw,34px);text-decoration:none;letter-spacing:-.04em}
+.socials{display:flex;gap:10px;flex-wrap:wrap}.social{border:1px solid #ddd;border-radius:999px;padding:10px 14px;text-decoration:none;font-size:13px}
+.footer{max-width:var(--max);margin:auto;padding:28px;color:#888;font-size:12px;display:flex;justify-content:space-between;border-top:1px solid var(--line)}
+@media(max-width:800px){
+.nav-links{display:none}.hero{padding-top:75px}
+.cards{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:35px}.pill-list{grid-template-columns:1fr}.contact-box{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav-inner">
+<a class="brand" href="#top">zebratuxedo</a>
+<nav class="nav-links"><a href="#about">About</a><a href="#mission">Mission</a><a href="#vision">Vision</a><a href="#contact">Contact</a></nav>
+<a class="nav-cta" href="#contact">Get in touch ↗</a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+<div class="eyebrow"><span class="dot"></span> this is just our Xperiment</div>
+<h1>A space for ideas that refuse to stay ordinary.</h1>
+<p><span class="zt">ZebraTuxedo</span> is a space for ideas, experiments, creativity, and everything in between.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#about">Explore <span class="zt">ZebraTuxedo</span> ↓</a><a class="btn btn-secondary" href="#contact">Get in touch</a></div>
+</section>
+
+<section class="section" id="about"><div class="section-head"><div class="kicker">01 / About</div><h2>Built for the <em>curious.</em></h2><p class="lead">A place to explore ideas without forcing them into a single category.</p></div>
+<div class="split"><p class="quote">“The world is too interesting to be ordinary.”</p><div class="copy">
+<p><span class="zt">ZebraTuxedo</span> exists for the curious, for people who look at the ordinary and wonder what else it could become.</p>
+<p>It is a place for design, technology, writing, culture, philosophy, experiments, and the random thoughts that appear somewhere between all of them.</p>
+<p>Some ideas become projects. Some become stories. Some disappear. Others stay long enough to become something bigger.</p>
+</div></div></section>
+
+<section class="section" id="mission"><div class="section-head"><div class="kicker">02 / Mission</div><h2>Make the future feel more <em>alive.</em></h2><p class="lead">To make sure the next generation gets to experience the beauty of youth and enjoy life.</p></div>
+<div class="cards">
+<article class="card"><div class="card-num">01</div><h3>Encourage curiosity.</h3><p>Question the obvious. Explore different perspectives. Keep looking for what could exist beyond the familiar.</p></article>
+<article class="card"><div class="card-num">02</div><h3>Create, don't just consume.</h3><p>Turn ideas into projects, experiences, technology, culture, and things that can outlive the moment.</p></article>
+<article class="card"><div class="card-num">03</div><h3>Make room for life.</h3><p>Youth should contain discovery, friendship, creativity, adventure, mistakes, laughter, love, and ambition.</p></article>
+</div></section>
+
+<section class="section" id="vision"><div class="section-head"><div class="kicker">03 / Vision</div><h2>Win in every <em>timeline.</em></h2><p class="lead">Build a life and body of work that remains meaningful regardless of how the future unfolds.</p></div>
+<div class="split"><div><p class="quote">Every timeline is another possible future.</p><div class="pill-list"><div class="pill">Different choices.</div><div class="pill">Different challenges.</div><div class="pill">Different opportunities.</div><div class="pill">Different versions of ourselves.</div></div></div>
+<div class="copy"><p>If the world changes, adapt. If the rules change, learn them. If one path closes, create another. If an idea fails, build again.</p>
+<p>“Winning” is not defined solely by money, status, recognition, or conventional success. It means becoming capable enough to navigate uncertainty, creating things that matter, experiencing life fully, and leaving something behind that was worth building.</p>
+<p><strong>Become someone capable of thriving across all of them.</strong></p></div></div></section>
+
+<section class="dark" id="contact"><div class="dark-inner"><div class="kicker">04 / Contact</div><h2>Let's make something <em>interesting.</em></h2><p class="lead">Available for select projects. The best way to reach me is email.</p>
+<div class="contact-box"><a class="email" href="mailto:myarchivecache@gmail.com">myarchivecache@gmail.com</a><div class="socials">
+<a class="social" href="https://instagram.com/metropolitangreekgod" target="_blank" rel="noopener">Instagram · @metropolitangreekgod</a>
+<a class="social" href="https://x.com/zthtml" target="_blank" rel="noopener">𝕏 · @zthtml</a>
+</div></div></div></section>
+</main>
+
+<footer class="footer"><span>© 2026 <span class="zt">ZEBRATUXEDO</span>. ALL RIGHTS RESERVED.</span></footer>
+</body>
+</html>
